@@ -14,6 +14,12 @@ int main() {
 	w[0] = new Weapon("한손검", 1000);
 	w[1] = new Weapon("두손검", 1000);
 	w[2] = new Weapon("활", 1000);
+	Inven->RemoveLastItem();
+	Inven->AddItem(*p[0]);
+	Inven->AddItem(*w[2]);
+	Inven->PrintAllItems();
+	cout << "_____________________________________________" << endl;
+	Inven->RemoveLastItem();
 	Inven->PrintAllItems();
 	delete Inven;
 	return 0;

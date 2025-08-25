@@ -1,4 +1,6 @@
 #pragma once
+#include<iostream>
+using namespace std;
 template <typename T>
 class Inventory
 {
@@ -25,7 +27,14 @@ public:
 			size_++;
 		}
 	}
-	void RemoveLastItem();
+	void RemoveLastItem() {
+		if (size_ == 0) {
+			cout << "인벤토리가 비어있습니다." << endl;
+			return;
+		}
+		size_--;
+		return;
+	}
 	int GetCapacity() const;
 	int GetSize() const;
 	void PrintAllItems() const {

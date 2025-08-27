@@ -11,6 +11,10 @@ public:
 	Item(string name,int price);
 	~Item() {};
 	void PrintInfo() const;
-	string getName();
-	int getPrice();
+	virtual string getName() {
+		return name_;
+	}
+	virtual int getPrice() {
+		return price_;
+	}
 };

@@ -1,5 +1,8 @@
 #pragma once
 #include<iostream>
+#include"Item.h"
+#include"Weapon.h"
+#include"Potion.h"
 using namespace std;
 template <typename T>
 class Inventory
@@ -59,8 +62,12 @@ public:
 		size_--;
 		return;
 	}
-	int GetCapacity() const;
-	int GetSize() const;
+	int GetCapacity() const {
+		return capacity_;
+	};
+	int GetSize() const {
+		return size_;
+	};
 	void PrintAllItems() const {
 		for (int i = 0; i < size_; i++) {
 			pItems_[i].PrintInfo();
@@ -83,7 +90,7 @@ public:
 	void SortItems() {
 		for (int i = 0; i < size_; i++) {
 			for(int j=0;j<size_-1-i;j++){
-				if(pItems_[j].GetPrice()>pItems_[j+1].GetPrice()){
+				if(pItems_[j].getPrice()> pItems_[j+1].getPrice()){
 					T temp=pItems_[j];
 					pItems_[j]=pItems_[j+1];
 					pItems_[j+1]=temp;
